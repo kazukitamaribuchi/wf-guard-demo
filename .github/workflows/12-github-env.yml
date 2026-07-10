@@ -1,0 +1,14 @@
+name: Comment handler (GITHUB_ENV from untrusted input)
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  handle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Store comment in env
+        run: |
+          echo "COMMENT_BODY=${{ github.event.comment.body }}" >> "$GITHUB_ENV"
+      - name: Use it
+        run: echo "$COMMENT_BODY"
