@@ -1,9 +1,15 @@
 name: Docs publish (credential leak via artifact)
 on: [push]
 
+# 同じブランチの古い実行を自動キャンセルし、無駄な課金を防ぐ
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - name: Build docs
