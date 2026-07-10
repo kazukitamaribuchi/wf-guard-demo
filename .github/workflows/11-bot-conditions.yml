@@ -4,6 +4,7 @@ on: pull_request_target
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     if: github.actor == 'dependabot[bot]'
     steps:
       - name: Approve and merge
