@@ -1,0 +1,4 @@
+# Zevr Sentinel が追加。担当者(ユーザー/チーム)は必要に応じて調整してください。
+# 参考: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+.github/workflows/ @kazukitamaribuchi
+.github/dependabot.yml @kazukitamaribuchi
